@@ -10,7 +10,8 @@ def sleep_clear(message, time):
 
 def main() -> None:
     while True:
-        match input(f"What would you like to do?\n{tabulate([['Encode',1], ['Decode',2], ['Bombe (enigma cracker)', 3],['Exit',4]], headers=['Activity','Key'], tablefmt='double_grid')}\n\n").strip():
+        table = tabulate([['Encode',1], ['Decode',2], ['Bombe (enigma cracker)', 3],['Exit',4]], headers=['Activity','Key'], tablefmt='double_grid')
+        match input(f"What would you like to do?\n{table}\n\n").strip():
             case "1":
                 sleep_clear("Encode selected",1.5)
                 encoder()
